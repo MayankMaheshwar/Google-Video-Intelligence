@@ -1,0 +1,14 @@
+In Cloud Shell run the following command to create a new service account named quickstart:
+
+gcloud iam service-accounts create quickstart
+
+Create a service account key file, replacing <your-project-123> with your Qwiklabs Project ID:
+
+gcloud iam service-accounts keys create key.json --iam-account quickstart@<your-project-123>.iam.gserviceaccount.com
+Now authenticate your service account, passing the location of your service account key file:
+
+gcloud auth activate-service-account --key-file key.json
+Obtain an authorization token using your service account:
+
+gcloud auth print-access-token
+The token will print in the output, and you'll be using it in a future step.
